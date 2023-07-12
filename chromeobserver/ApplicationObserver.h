@@ -14,7 +14,13 @@
 @interface ApplicationObserver : NSObject
 
 @property (nonatomic) AXObserverRef windowObserver;
+@property (nonatomic) AXUIElementRef chromeElement;
+@property (nonatomic) NSString* capturedURL;
 
+- (void)applicationDidActivate:(NSNotification *)notification;
+- (void)findToolbarInGroup:(AXUIElementRef)element;
+- (void)findTextFieldInToolbar:(AXUIElementRef)element;
+- (NSString*)getURLTriggered;
 - (instancetype)init;
 
 @end
