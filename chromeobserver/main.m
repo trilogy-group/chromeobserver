@@ -1,16 +1,11 @@
-//
-//  main.m
-//  chromeobserver
-//
-//  Created by Raul Guerrero on 10/07/23.
-//
-
-#import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
+#import <AppKit/AppKit.h>
+#import "ApplicationObserver.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        ApplicationObserver *observer = [[ApplicationObserver alloc] init];
+        [[NSRunLoop mainRunLoop] run];
     }
     return 0;
 }

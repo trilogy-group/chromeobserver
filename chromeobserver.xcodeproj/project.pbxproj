@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		376209172A5D091800E4D502 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 376209162A5D091800E4D502 /* main.m */; };
+		3762091F2A5D0B2300E4D502 /* ApplicationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 3762091E2A5D0B2300E4D502 /* ApplicationObserver.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		376209132A5D091800E4D502 /* chromeobserver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = chromeobserver; sourceTree = BUILT_PRODUCTS_DIR; };
 		376209162A5D091800E4D502 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3762091D2A5D0B0500E4D502 /* ApplicationObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationObserver.h; sourceTree = "<group>"; };
+		3762091E2A5D0B2300E4D502 /* ApplicationObserver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationObserver.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				376209162A5D091800E4D502 /* main.m */,
+				3762091D2A5D0B0500E4D502 /* ApplicationObserver.h */,
+				3762091E2A5D0B2300E4D502 /* ApplicationObserver.m */,
 			);
 			path = chromeobserver;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3762091F2A5D0B2300E4D502 /* ApplicationObserver.m in Sources */,
 				376209172A5D091800E4D502 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

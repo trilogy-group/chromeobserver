@@ -1,0 +1,1 @@
+Implemented in Objective C, a console app that listens to Chrome UI events and retrieves the URL from the active window and tab omnibox
