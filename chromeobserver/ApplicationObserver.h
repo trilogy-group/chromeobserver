@@ -14,7 +14,6 @@
 @interface ApplicationObserver : NSObject
 
 @property (nonatomic) AXObserverRef windowObserver;
-@property (nonatomic, copy) NSString *currentURL;
 
 - (instancetype)init;
 
