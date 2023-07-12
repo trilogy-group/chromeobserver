@@ -14,6 +14,7 @@ static void windowCallback(AXObserverRef observer, AXUIElementRef element, CFStr
     AXUIElementCopyAttributeValue(chromeElement, (__bridge CFStringRef)NSAccessibilityFocusedWindowAttribute, (CFTypeRef *)&windowElement);
     NSString *value = NULL;
     AXUIElementCopyAttributeValue(windowElement, (__bridge CFStringRef)NSAccessibilityTitleAttribute, (void *)&value);
+    appObserver.capturedTitle = value;
     [appObserver findToolbarInGroup:windowElement];
 }
 
@@ -106,10 +107,10 @@ static void windowCallback(AXObserverRef observer, AXUIElementRef element, CFStr
     }
 }
 
-- (NSString*)getURLTriggered {
+- (void)getURLTriggered {
     // this is called once an UIElement even was triggered and a URL was obtained
+    NSLog(@"Tab title: %@", self.capturedTitle);
     NSLog(@"Omnibox text: %@", self.capturedURL);
-    return self.capturedURL;
 }
 
 - (instancetype)init {

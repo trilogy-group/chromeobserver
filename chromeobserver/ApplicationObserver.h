@@ -16,11 +16,12 @@
 @property (nonatomic) AXObserverRef windowObserver;
 @property (nonatomic) AXUIElementRef chromeElement;
 @property (nonatomic) NSString* capturedURL;
+@property (nonatomic) NSString* capturedTitle;
 
 - (void)applicationDidActivate:(NSNotification *)notification;
 - (void)findToolbarInGroup:(AXUIElementRef)element;
 - (void)findTextFieldInToolbar:(AXUIElementRef)element;
-- (NSString*)getURLTriggered;
+- (void)getURLTriggered;
 - (instancetype)init;
 
 @end
