@@ -27,6 +27,14 @@ static void windowCallback(AXObserverRef observer, AXUIElementRef element, CFStr
         pid_t pid = [app processIdentifier];
         self.chromeElement = AXUIElementCreateApplication(pid);
 
+        // Get the URL for the first time
+        AXUIElementRef windowElement = NULL;
+        AXUIElementCopyAttributeValue(self.chromeElement, (__bridge CFStringRef)NSAccessibilityFocusedWindowAttribute, (CFTypeRef *)&windowElement);
+        NSString *value = NULL;
+        AXUIElementCopyAttributeValue(windowElement, (__bridge CFStringRef)NSAccessibilityTitleAttribute, (void *)&value);
+        self.capturedTitle = value;
+        [self findToolbarInGroup:windowElement];
+        
         // Create AXObservers for the application windows and tabs.
         AXObserverCreate(pid, windowCallback, &_windowObserver);
         AXObserverAddNotification(self.windowObserver, self.chromeElement, (__bridge CFStringRef)NSAccessibilityFocusedUIElementChangedNotification, (__bridge_retained void *)self);
