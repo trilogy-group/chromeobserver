@@ -120,10 +120,14 @@ static void windowCallback(AXObserverRef observer, AXUIElementRef element, CFStr
     self.capturedURL = nil;
     if (self) {
         // enable app notification
-        NSNotificationCenter *notificationCenter = [[NSWorkspace sharedWorkspace] notificationCenter];
-        [notificationCenter addObserver:self selector:@selector(applicationDidActivate:) name:NSWorkspaceDidActivateApplicationNotification object:nil];
+        self.notificationCenter = [[NSWorkspace sharedWorkspace] notificationCenter];
+        [self.notificationCenter addObserver:self selector:@selector(applicationDidActivate:) name:NSWorkspaceDidActivateApplicationNotification object:nil];
     }
     return self;
+}
+
+- (void)stop {
+    [self.notificationCenter removeObserver:self];
 }
 
 @end
